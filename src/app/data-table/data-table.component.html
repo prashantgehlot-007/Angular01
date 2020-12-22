@@ -1,0 +1,137 @@
+
+<!-- Basic form layout section start -->
+<section id="basic-form-layouts">
+  <div class="row text-left">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="card-content">
+          <div class="px-3">
+            <form class="form form-horizontal form-bordered" [formGroup]="newdata" (ngSubmit)="onSubmit()">
+              <div formGroupName="fireAlarm">
+
+              <div class="form-body">
+                <h4 class="form-section"></h4>
+                <h4 class="form-section"><i class="ft-mail"></i>Student Details </h4>
+                <p class="card-text text-center"><small class="text-muted "></small></p>
+                <div class="card-content">
+                  <div class="px-3">
+                    <!-- <form class="form form-horizontal form-bordered"> -->
+
+                      <div class="form-body">
+                        <div class="form-group row">
+
+                          <label class="col-md-3 label-control" for="timesheetinput1"> MyId</label>
+                          <div class="col-md-9">
+                            <div class="position-relative has-icon-left">
+                              <input type="text" id="timesheetinput1" class="form-control" placeholder="Name" formControlName="MyId">
+                              <div class="form-control-position">
+                              </div>
+                              <!-- <div *ngIf=" f.Name.errors && (f.Name.dirty || f.Name.touched || submitted)" class="invalid">
+                                <small *ngIf="f.Name.errors.required">Name is required</small>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="form-body">
+
+                        <div class="form-group row">
+                          <label class="col-md-3 label-control" for="timesheetinput1"> Name</label>
+                          <div class="col-md-9">
+                            <div class="position-relative has-icon-left">
+                              <input type="text" id="timesheetinput1" class="form-control" placeholder="Name" formControlName="Name">
+                              <div class="form-control-position">
+                              </div>
+                              <!-- <div *ngIf=" f.Name.errors && (f.Name.dirty || f.Name.touched || submitted)" class="invalid">
+                                <small *ngIf="f.Name.errors.required">Name is required</small>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-md-3 label-control" for="timesheetinput2">Address/Company</label>
+                          <div class="col-md-9">
+                            <div class="position-relative has-icon-left">
+                              <input type="text" id="timesheetinput2" class="form-control" placeholder="Address/Company" name="projectname"
+                                formControlName="Address">
+                              <div class="form-control-position">
+
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group row last">
+                          <label class="col-md-3 label-control" for="timesheetinput7">Email</label>
+                          <div class="col-md-9">
+                            <div class="position-relative has-icon-left">
+                              <input id="timesheetinput7" rows="5" class="form-control"
+                              placeholder="Email" formControlName="Email">
+                              <div class="form-control-position">
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                      </div>
+
+                      <div class="form-actions right">
+                        <button type="button" class="btn btn-raised btn-warning mr-1">
+                          <i class="ft-x"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn btn-raised btn-primary">
+                          <i class="fa fa-check-square-o" ></i> Save
+                        </button>
+                      </div>
+                    <!-- </form> -->
+
+                  </div>
+                </div>
+              </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><br>
+
+
+<!-- Show Table -->
+<div class="row">
+  <div class="col-md-12">
+      <table class="table">
+          <thead class="thead-light">
+              <tr>
+                  <th>MyID</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Email</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let data of Sdata">
+                  <td >{{data.myid}}</td>
+                  <td >{{data.name}}</td>
+                  <td >{{data.address}}</td>
+                  <td >{{data.email}}</td>
+                  <td>
+                      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(data.myid)"></i>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+

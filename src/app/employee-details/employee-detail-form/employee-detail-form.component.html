@@ -1,0 +1,62 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <!-- //one -->
+    <div class="col-md-6">
+      <div class="form-group row last">
+        <label class="col-md-5 label-control" for="userinput3">cardOwnerName:</label>
+        <div class="col-md-7">
+          <input type="text" formControlName="cardOwnerName" required>
+        </div>
+      </div>
+    </div>
+    <!-- //two -->
+    <div class="col-md-6">
+      <div class="form-group row last">
+        <label class="col-md-4 label-control" for="userinput4">cardNumber:</label>
+        <div class="col-md-8">
+        <input type="text" formControlName="cardNumber">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- second row -->
+  <div class="row">
+    <!-- //one -->
+    <div class="col-md-6">
+      <div class="form-group row last">
+        <label class="col-md-5 label-control" for="userinput3">expirationDate</label>
+        <div class="col-md-7">
+          <input type="text" formControlName="expirationDate">
+        </div>
+      </div>
+    </div>
+    <!-- //two -->
+    <div class="col-md-6">
+      <div class="form-group row last">
+        <label class="col-md-4 label-control" for="userinput4"> securityCode</label>
+        <div class="col-md-8">
+          <input type="text" formControlName="securityCode">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+  </div>
+</form>
+<div class="row">
+    <div class="col-md-12">
+        <app-payment-details></app-payment-details>
+    </div>
+</div>
+
+
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

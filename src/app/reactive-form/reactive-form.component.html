@@ -1,0 +1,56 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+
+  <div class="form-group">
+      <label>MyId</label>
+      <input class="form-control form-control-lg" placeholder="Full Name"
+      ngModel name="myid">
+  </div>
+  <div class="form-group">
+      <label>Name</label>
+      <input class="form-control form-control-lg" placeholder="16 Digit Card Number"
+      ngModel name="name">
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-6">
+          <label>Address</label>
+          <input type="password" class="form-control form-control-lg" placeholder="Security Code"
+          ngModel name="address">
+      </div>
+      <div class="form-group col-md-6">
+          <label>Email</label>
+          <input class="form-control form-control-lg" placeholder="MM/YY"
+          ngModel name="email">
+      </div>
+  </div>
+  <div class="form-group">
+      <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+  </div>
+</form>
+
+
+<div class="row">
+  <div class="col-md-12">
+      <table class="table">
+          <thead class="thead-light">
+              <tr>
+                  <th>MyID</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Email</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let data of Sdata">
+                  <td >{{data.myid}}</td>
+                  <td >{{data.name}}</td>
+                  <td >{{data.address}}</td>
+                  <td >{{data.email}}</td>
+                  <td>
+                      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(data.myid)"></i>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<p>employee-details works!</p>
+<div class="row">
+  <div class="col-md-12">
+      <table class="table">
+          <thead class="thead-light">
+              <tr>
+                  <th>Id</th>
+                  <th>SId</th>
+                  <th>StudentName</th>
+                  <th>StudentNumber</th>
+                  <th>AdmissionDate</th>
+                  <th>SchoolCode</th>
+                  <th>AcedmicDay</th>
+                  <th>Class</th>
+                  <th>Comment</th>
+                  <th>Address</th>
+                  <th>Mobile</th>
+                  <th>SchoolTime</th>
+                  <th>Email</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let data of newsfeed">
+                  <td>{{data.id}}</td>
+                  <td >{{data.sId}}</td>
+                  <td>{{data.studentName}}</td>
+                  <td>{{data.studentNumber}}</td>
+                  <td >{{data.admissionDate}}</td>
+                  <td>{{data.schoolCode}}</td>
+                  <td>{{data.acedmicDay}}</td>
+                  <td>{{data.class}}</td>
+                  <td >{{data.comment}}</td>
+                  <td>{{data.address}}</td>
+                  <td>{{data.mobile}}</td>
+                  <td >{{data.schoolTime}}</td>
+                  <td>{{data.email}}</td>
+                  <td>
+                      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(data.id)"></i>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
